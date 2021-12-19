@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<!-- No SceneBuilder temos as abas principais que são: 
+
+Library: Encontramos todos os componentes para compormos uma tela
+
+Document: Temos a hierarquia dos nodes da nossa tela
+
+Inspector: Que vamos ter 3 partes principais nela, que são  Properties, layout, Code.
+Layout: Vai ter vários parametros para você configurar o layout do seu elemento. -->
+<!-- ArchorPane vai definir um painel, aonde você pode colocar objetos que vão estar ancorados em certas posições -->
+
+<AnchorPane prefHeight="544.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewController">
+   <!-- Dentro do meu painel, eu vou ter os filhos e dentro deles eu tenho meus nodos. -->
+   <children> 
+      <!-- Label é um texto que é mostrado na tela -->
+      <Label layoutX="40.0" layoutY="46.0" text="Calculate Sum">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+       <!-- TextField é um objeto que recebe o que o usuário informar -->
+      <TextField fx:id="txtNumber1" layoutX="28.0" layoutY="120.0" prefHeight="25.0" prefWidth="249.0" promptText="First number" />
+      <TextField fx:id="txtNumber2" layoutX="28.0" layoutY="170.0" prefHeight="25.0" prefWidth="249.0" promptText="Second number" />
+       <!-- Button é um botão clicável -->
+      <Button fx:id="btSum" layoutX="28.0" layoutY="218.0" mnemonicParsing="false" onAction="#onBTSumAction" text="Sum" />
+      <Label layoutX="28.0" layoutY="255.0" text="Result = ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelResult" layoutX="125.0" layoutY="255.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
