@@ -1,18 +1,23 @@
 package gui;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import gui.util.Alerts;
+import gui.util.Constraints;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 
 // Quando o usuário fizer alguma interação com a tela, exemplo: clicar em um botão,
 // preencher algum componente... essa ação irá tratada pelo controlador
 
 // Irei usar um padrão quando eu for criar um controlador de uma classe fxml, irei colocar sempre o Controller na frente.
 // Por exemplo: Clientes.fxml = ClientesController.java
-public class ViewController {
+public class ViewController implements Initializable {
 
 	@FXML
 	private TextField txtNumber1;
@@ -40,5 +45,14 @@ public class ViewController {
 		} catch (NumberFormatException N) {
 			Alerts.showAlert("Error", "Parse error", N.getMessage(), AlertType.ERROR);
 		}
+	}
+
+	// Vou colocar aqui dentro ações que serão executadas na hora da instaciação do controlador
+	// URL é o caminho da sua tela
+	// ResourceBundle são recursos que você pode usar na implementação
+	@Override
+	public void initialize(URL url, ResourceBundle rb) {
+		Constraints.setTextFieldDouble(txtNumber1);
+		Constraints.setTextFieldDouble(txtNumber2);
 	}
 }
